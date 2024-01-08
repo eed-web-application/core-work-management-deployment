@@ -1,0 +1,52 @@
+name: Build Test
+on: 
+  workflow_call:
+      secrets:
+          token:
+              required: false
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+jobs:
+    build_and_test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout source code
+          uses: actions/checkout@v3
+        - uses: actions/setup-java@v3
+          with:
+            distribution: temurin
+            java-version: 21
+        - name: Build Project
+          uses: gradle/gradle-build-action@v2
+          env:
+            CI: true
+            GH_USERNAME: ${{ secrets.GH_PACKAGE_USERNAME }}
+            GH_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}
+          with:
+            cache-disabled: true
+            arguments: assemble
+        - name: Check for docker-compose.yml file
+          uses: andstor/file-existence-action@v2
+          id: check_files
+          with:
+            files: "docker-compose.yml"
+        - name: Launch test backend
+          if: steps.check_files.outputs.files_exists == 'true'
+          run: |
+            docker compose -f docker-compose.yml up -d
+            sleep 5
+        - name: Test Project
+          uses: gradle/gradle-build-action@v2
+          env:
+            CI: true
+          with:
+            arguments: test
+        - name: Shutdown test backend
+          if: steps.check_files.outputs.files_exists == 'true' &&  (success() || failure())
+          run: |
+            docker compose -f docker-compose.yml logs
+            docker compose -f docker-compose.yml down -v
