@@ -140,6 +140,6 @@ jobs:
                   fi
                 done
                 echo "Use image $IMAGE_SHA_TAG for deployment"
-                gh workflow --repo eed-web-application/core-work-management-system-deployment run Deployment -f deployment_image="$IMAGE_SHA_TAG"
+                gh workflow --repo eed-web-application/core-work-management-deployment run Deployment -f deployment_image="$IMAGE_SHA_TAG"
             env:
                 GITHUB_TOKEN: ${{ secrets.TRIGGER_WORKFLOW_SECRET }}
