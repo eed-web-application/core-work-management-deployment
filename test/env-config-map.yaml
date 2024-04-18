@@ -1,3 +1,4 @@
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: env-config-map
@@ -6,6 +7,7 @@ data:
   CWM_MAX_POST_SIZE: 100MB
   #CWM_CONSUMER_GROUP_ID: elog-plus-group
   CWM_AUTHENTICATION_HEADER: x-vouch-idp-accesstoken
+  CWM_URL: http://core-inventory-system-service.core-inventory-system
   #CWM_KAFKA_BOOTSTRAP:  eed-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
   #CWM_KAFKA_SECURITY_PROTOCOL: SASL_PLAINTEXT
   #CWM_KAFKA_SASL_MECHANISM: SCRAM-SHA-512
@@ -17,4 +19,3 @@ data:
   SPRING_PROFILES_ACTIVE: init-work-activity-type,init-shop-group
   #root authenticaiton token
   CWM_ROOT_AUTHENTICATION_TOKEN_JSON: '[{"name":"root-token-1","expiration":"2025-12-31"}]'
-  CWM_CIS_URL: http://core-inventory-system-service.core-inventory-system
