@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: core-work-management-deployment
+  name: core-work-management
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: core-work-management-deployment
+      app: core-work-management
   template:
     metadata:
       labels:
-        app: core-work-management-deployment
+        app: core-work-management
       annotations:
         prometheus.io/scrape: 'true'
         prometheus.io.scheme: 'http'
@@ -18,7 +18,7 @@ spec:
         prometheus.io/port: '8080'
     spec:
       containers:
-      - name: core-work-management-deployment
+      - name: core-work-management
         imagePullPolicy: Always
         image: ghcr.io/eed-web-application/core-work-management:sha-d3a7589
         envFrom:
