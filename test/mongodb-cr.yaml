@@ -1,7 +1,7 @@
 apiVersion: psmdb.percona.com/v1
 kind: PerconaServerMongoDB
 metadata:
-  name: cis-cluster
+  name: cwm-cluster
   finalizers:
     - delete-psmdb-pods-in-order
 spec:
@@ -17,7 +17,7 @@ spec:
     setFCV: false
   secrets:
     users: mongodb-secret
-    encryptionKey: cis-cluster-encryption-key
+    encryptionKey: cwm-cluster-encryption-key
 #    vault: my-cluster-name-vault
   pmm:
     enabled: false
