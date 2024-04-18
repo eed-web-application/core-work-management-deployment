@@ -3,7 +3,13 @@ kind: Kustomization
 
 resources:
 - deployment.yaml
+- application-secrets.yaml
 - app-service.yaml
 - env-config-map.yaml
 - docker-config-secrets.yaml
 - ingress.yaml
+- ingress-public-doc.yaml
+- mongodb-operator.yaml
+- mongodb-rbac.yaml
+- mongodb-secrets.yaml
+- mongodb-cr.yaml
