@@ -20,7 +20,7 @@ spec:
       containers:
       - name: core-work-management
         imagePullPolicy: Always
-        image: ghcr.io/eed-web-application/core-work-management:sha-e18e8a5
+        image: ghcr.io/eed-web-application/core-work-management:sha-61f1010
         envFrom:
         - configMapRef:
             name: env-config-map
