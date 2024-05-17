@@ -12,7 +12,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /api/cwm(/|$)(.*)
+        path: /api/cwm-apptoken(/|$)(.*)
         backend:
           service:
             name: core-work-management-service
