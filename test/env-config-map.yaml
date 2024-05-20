@@ -8,14 +8,16 @@ data:
   #CWM_CONSUMER_GROUP_ID: elog-plus-group
   CWM_AUTHENTICATION_HEADER: x-vouch-idp-accesstoken
   CWM_URL: http://core-inventory-system-service.core-inventory-system
-  #CWM_KAFKA_BOOTSTRAP:  eed-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
-  #CWM_KAFKA_SECURITY_PROTOCOL: SASL_PLAINTEXT
-  #CWM_KAFKA_SASL_MECHANISM: SCRAM-SHA-512
-  #CWM_KAFKA_SASL_JAAS_CONFIG: 'org.apache.kafka.common.security.scram.ScramLoginModule required username="elog-plus" password="";'
+  CWM_KAFKA_BOOTSTRAP:  eed-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+  CWM_KAFKA_SECURITY_PROTOCOL: SASL_PLAINTEXT
+  CWM_KAFKA_SASL_MECHANISM: SCRAM-SHA-512
   CWM_LDAP_URI: ldaps://sdfldap001.sdf.slac.stanford.edu
   CWM_LDAP_BASE: dc=sdf,dc=slac,dc=stanford,dc=edu
   CWM_ROOT_USERS: bisegni@slac.stanford.edu,mgibbs@slac.stanford.edu,boogie@slac.stanford.edu
   CWM_OIDC_CONFIGURATION_ENDPOINT: https://dex.slac.stanford.edu/.well-known/openid-configuration
-  SPRING_PROFILES_ACTIVE: init-work-activity-type
+  CWM_CIS_URL: http://core-inventory-system-service.core-inventory-system
+  CWM_ELOG_URL: http://elog-plus-backend-service.elog-plus
+  CWM_ELOG_IMPORT_TOPIC: elog-plus-import-entry
+  SPRING_PROFILES_ACTIVE: kafka-auth,init-work-activity-type
   #root authenticaiton token
   CWM_ROOT_AUTHENTICATION_TOKEN_JSON: '[{"name":"root-token-1","expiration":"2025-12-31"}]'
