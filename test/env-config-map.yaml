@@ -5,6 +5,7 @@ metadata:
 data:
   # property-like keys; each key maps to a simple value
   CWM_MAX_POST_SIZE: 100MB
+  CWM_LOG_LEVEL: DEBUG
   #CWM_CONSUMER_GROUP_ID: elog-plus-group
   CWM_AUTHENTICATION_HEADER: x-vouch-idp-accesstoken
   CWM_URL: http://core-inventory-system-service.core-inventory-system
