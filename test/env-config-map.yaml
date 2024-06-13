@@ -19,6 +19,6 @@ data:
   CWM_CIS_URL: http://core-inventory-system-service.core-inventory-system
   CWM_ELOG_URL: http://elog-plus-backend-service.elog-plus
   CWM_ELOG_IMPORT_TOPIC: elog-plus-import-entry
-  SPRING_PROFILES_ACTIVE: kafka-auth,init-work-activity-type,async-ops
+  SPRING_PROFILES_ACTIVE: kafka-auth,init-work-activity-type,async-ops,elog-support
   #root authenticaiton token
   CWM_ROOT_AUTHENTICATION_TOKEN_JSON: '[{"name":"root-token-1","expiration":"2025-12-31"}]'
