@@ -65,11 +65,11 @@ spec:
       exposeType: ClusterIP
     resources:
       limits:
+        cpu: "4"
+        memory: "4G"
+      requests:
         cpu: "2"
         memory: "2G"
-      requests:
-        cpu: "300m"
-        memory: "0.5G"
     volumeSpec:
       persistentVolumeClaim:
         resources:
