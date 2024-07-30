@@ -130,7 +130,7 @@ jobs:
             with:
               app-id: ${{ secrets.APP_ID }}
               private-key: ${{ secrets.APP_PRIVATE_KEY }}
-              repositories: "eed-web-application"
+              repositories: "core-work-management-deployment"
           - run: |
                 for tag in $(echo "${{ needs.build-docker-images.outputs.IMAGE_TO_DEPLOY }}" | sed "s/,/ /g")
                 do
