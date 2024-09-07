@@ -6,8 +6,8 @@ metadata:
     - delete-psmdb-pods-in-order
 spec:
   pause: false
-  crVersion: 1.16.0
-  image: percona/percona-server-mongodb:6.0.15-12
+  crVersion: 1.16.2
+  image: percona/percona-server-mongodb:7.0.8-5
   imagePullPolicy: Always
   allowUnsafeConfigurations: false
   updateStrategy: SmartUpdate
