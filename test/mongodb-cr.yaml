@@ -5,7 +5,7 @@ metadata:
   finalizers:
     - delete-psmdb-pods-in-order
 spec:
-  pause: true
+  pause: false
   crVersion: 1.16.0
   image: percona/percona-server-mongodb:6.0.15-12
   imagePullPolicy: Always
