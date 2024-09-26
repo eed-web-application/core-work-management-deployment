@@ -29,6 +29,11 @@ jobs:
           with:
             cache-disabled: true
             arguments: assemble
+        - name: Uplaod artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: ApplicationJar
+            path: build/libs/*
         - name: Check for docker-compose.yml file
           uses: andstor/file-existence-action@v2
           id: check_files
