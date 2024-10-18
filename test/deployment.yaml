@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: core-work-management
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: core-work-management
