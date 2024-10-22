@@ -14,3 +14,5 @@ resources:
 - mongodb-rbac.yaml
 - mongodb-secrets.yaml
 - mongodb-cr.yaml
+- hazelcast-config-map.yaml
+- hazelcast-rbac.yaml
