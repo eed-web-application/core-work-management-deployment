@@ -12,6 +12,7 @@ data:
   CWM_KAFKA_BOOTSTRAP:  eed-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
   CWM_KAFKA_SECURITY_PROTOCOL: SASL_PLAINTEXT
   CWM_KAFKA_SASL_MECHANISM: SCRAM-SHA-512
+  CWM_CONSUMER_GROUP_ID: core-work-management-group
   CWM_LDAP_URI: ldaps://sdfldap001.sdf.slac.stanford.edu
   CWM_LDAP_BASE: dc=sdf,dc=slac,dc=stanford,dc=edu
   CWM_ROOT_USERS: bisegni@slac.stanford.edu,mgibbs@slac.stanford.edu,boogie@slac.stanford.edu,tiffany@slac.stanford.edu
