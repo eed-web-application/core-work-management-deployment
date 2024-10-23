@@ -16,3 +16,4 @@ resources:
 - mongodb-cr.yaml
 - hazelcast-config-map.yaml
 - hazelcast-rbac.yaml
+- hazelcast-service.yaml

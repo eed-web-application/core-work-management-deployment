@@ -23,8 +23,9 @@ data:
             eviction-policy: LFU
       network:
         join:
+          multicast:
+            enabled: false
           kubernetes:
             enabled: true
             namespace: core-work-management
-            service-name: core-work-management-service
-            resolve-not-ready-addresses: true
+            service-name: hazelcast-service
